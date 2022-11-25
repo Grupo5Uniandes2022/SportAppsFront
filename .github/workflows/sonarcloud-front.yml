@@ -34,9 +34,10 @@ jobs:
       - name: Run Coverage
         run: npm run coverage -- --watch=false --browsers=ChromeHeadless
       - name: Space
-        run: pwd
-      - name: Find Files
-        run: ls -la coverage/workout-fitness/
+        run: |-
+          cd coverage/workout-fitness/
+          pwd
+          ls -la
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:

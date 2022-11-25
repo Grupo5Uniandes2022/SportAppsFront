@@ -37,4 +37,4 @@ jobs:
       - name: Run Coverage
         run: npm run coverage -- --watch=false --browsers=ChromeHeadless
       - name: Find Files
-        run: ls -la coverage/
+        run: ls -la coverage/workout-fitness/

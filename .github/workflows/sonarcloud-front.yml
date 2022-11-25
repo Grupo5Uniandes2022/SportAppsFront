@@ -35,8 +35,6 @@ jobs:
         run: npm run test -- --watch=false --browsers=ChromeHeadless
       - name: Run Coverage
         run: npm run coverage -- --watch=false --browsers=ChromeHeadless
-        with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:

@@ -1,0 +1,33 @@
+<div class="meal">
+
+  <div class="meal__title">
+    <h1>
+      <img src="assets/images/food.svg">
+
+      <span *ngIf="service$ | async as service; else title;">
+            {{ service.name ? 'Editar' : 'Registrar' }} Servicio
+          </span>
+
+      <ng-template #title>
+        Loading...
+      </ng-template>
+    </h1>
+  </div>
+
+  <div *ngIf="service$ | async as service; else loading;">
+    <app-service-form
+      [service]="service"
+      (create)="addService($event)"
+      (update)="updateService($event)"
+      (remove)="removeService($event)">
+    </app-service-form>
+  </div>
+
+  <ng-template #loading>
+    <div class="message">
+      <img src="assets/images/loading.svg">
+      Fetching service...
+    </div>
+  </ng-template>
+
+</div>

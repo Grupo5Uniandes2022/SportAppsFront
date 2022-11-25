@@ -1,0 +1,55 @@
+<div class="schedule-assign">
+
+  <div class="schedule-assign__modal">
+    <div class="schedule-assign__title">
+      <h1>
+        <img src="assets/images/{{ section.type === 'workouts' ? 'workout' : 'services' }}.svg">
+        Programar
+
+        {{ section.type === 'workouts' ? 'Entrenamiento' : 'Servicio' }}
+
+      </h1>
+      <a
+        class="btn__add"
+        [routerLink]="getRoute(section.type)">
+        <img src="assets/images/add-white.svg">
+        Nuevo  {{ section.type === 'workouts' ? 'Entrenamiento' : 'Servicio' }}
+      </a>
+    </div>
+    <div class="schedule-assign__list">
+
+        <section *ngIf="list!==null && section.type==='workouts'">
+          <div
+            *ngFor="let item of getEventsFromSection(list, section.type)"
+            [class.active]="exists(item)"
+            (click)="toggleItem(item.id)">
+            {{ item.title }}
+          </div>
+        </section>
+        <section *ngIf="services!==null  && section.type==='services'">
+          <div
+            *ngFor="let item of services"
+            [class.active]="exists(item)"
+            (click)="toggleItem(item.id)">
+            {{ item.name }}
+          </div>
+        </section >
+    </div>
+    <div class="schedule-assign__submit">
+      <div>
+        <button
+          type="button"
+          class="button"
+          (click)="updateAssign(section.type, services, list)">
+          Guardar
+        </button>
+        <button
+          type="button"
+          class="button button--cancel"
+          (click)="cancelAssign()">
+          Cancelar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

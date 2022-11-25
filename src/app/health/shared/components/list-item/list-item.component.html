@@ -1,0 +1,41 @@
+<div class="list-item">
+  <a [routerLink]="getRoute(item)">
+    <p class="list-item__name">
+      <strong>{{ item.title }}</strong>
+    </p>
+    <p class="list-item__ingredients">
+          <span *ngIf="item.ingredients; else showWorkout">
+            Intolerancias: {{ item.ingredients | aliments }}
+          </span> <br>
+          <span *ngIf="item.alergics">
+          Alergias: {{ item.alergics | aliments }}
+          </span>
+    </p>
+    <ng-template #showWorkout>
+      <span>Distancia: {{item.distance}}  km, Duración: {{item.duration}} mins </span>
+    </ng-template>
+  </a>
+  <div
+    class="list-item__delete"
+    *ngIf="toggled">
+    <p>Remover item?</p>
+    <button
+      class="confirm"
+      type="button"
+      (click)="removeItem()">
+      Sí
+    </button>
+    <button
+      class="cancel"
+      type="button"
+      (click)="toggle()">
+      No
+    </button>
+  </div>
+  <button
+    class="trash"
+    type="button"
+    (click)="toggle()">
+    <img src="/assets/images/remove.svg">
+  </button>
+</div>

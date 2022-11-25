@@ -1,0 +1,14 @@
+<div>
+
+  <app-header
+    [user]="user$ | async"
+    (logout)="onLogout()"></app-header>
+
+  <app-navbar-admin *ngIf="(user$ | async)?.authenticated && (user$ | async)?.roleAdm"></app-navbar-admin>
+  <app-navbar *ngIf="(user$ | async)?.authenticated && !(user$ | async)?.roleAdm"></app-navbar>
+
+  <div class="wrapper">
+    <router-outlet></router-outlet>
+  </div>
+
+</div>

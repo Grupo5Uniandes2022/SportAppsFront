@@ -1,0 +1,23 @@
+<section class="section">
+
+  <div class="container">
+    <div class="columns">
+      <div class="column is-one-third">
+        <div *ngIf="data$ | async as data">
+          <app-integrations-detail [data]="data"></app-integrations-detail>
+        </div>
+      </div>
+      <div class="column is-two-thirds">
+        <div *ngIf="activities$ | async as activities" class="overflow-scroll">
+          <div *ngFor="let activity of activities">
+            <app-activity-strava [activity]="activity"></app-activity-strava>
+            <hr />
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <a class="btn btn-primary" [routerLink]="['../']" role="button">Volver</a>
+      </div>
+    </div>
+  </div>
+</section>

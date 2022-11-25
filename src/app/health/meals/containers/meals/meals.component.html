@@ -1,0 +1,77 @@
+<div class="meals">
+  <div class="meals__title">
+    <h1>
+      <img src="/assets/images/food.svg"> Perfil Alimenticio
+    </h1>
+    <a
+      class="btn__add"
+      [routerLink]="['../meals/new']">
+      <img src="/assets/images/add-white.svg">
+      Registrar datos alimenticios
+    </a>
+  </div>
+  <div *ngIf="meals$ | async as meals; else loading;">
+    <div class="message" *ngIf="!meals.length">
+      <img src="/assets/images/face.svg">
+      No existen registros alimenticios, agrega información para empezar.
+    </div>
+
+    <app-list-item *ngFor="let meal of meals"
+                   [item]="meal"
+                   (remove)="removeMeal($event)">
+    </app-list-item>
+    <!-- meals ngFor -->
+  </div>
+  <ng-template #loading>
+    <div class="message">
+      <img src="/assets/images/loading.svg">
+      Obteniendo registros alimenticios...
+    </div>
+  </ng-template>
+</div>
+
+
+
+<div *ngIf="meals$ | async as meals; else loading;">
+<div class="meals"  *ngIf="meals.length">
+  <div class="meals__title">
+    <h1>
+      <img src="/assets/images/plan.svg"> Plan Nutricional Sugerido:
+    </h1>
+
+  </div>
+
+  <div style="padding: 10px">
+    <strong>Desayuno:</strong>
+    <hr/>
+    <ul>
+      <li>1 naranja o su jugo</li>
+      <li>Leche 250c.c. (con café o té opcional)</li>
+      <li>30gr de pan integral o</li>
+      <li>30gr de cereales sin azúcar</li>
+      <li>dos cucharaditas de mermelada sin sucrosa</li>
+      <li>A media mañana (nueves)
+      <li>1 fruta fresca, 1 taza de una infusión</li>
+      </ul>
+    <strong>Almuerzo:</strong>
+    <hr/>
+    <ul>
+      <li>Papas 100grs, con verdura hervida 200grs (espinacas, acelgas)</li>
+      <li>1 filete de ternera de 130gr a la plancha, con un tomate aliñado</li>
+      <li>1 yogur desnatado, infusión</li>
+      <li>A media tarde (onces)</li>
+      <li>Leche descremada 125c.c. ( té o café opcional)</li>
+      <li>2 cucharadas de cereales integrales</li>
+      </ul>
+    <strong>Comida:</strong>
+    <hr/>
+    <ul>
+    <li>Crema de espárragos, champiñones, zanahoria ( puede añadir un poco de leche descremada)</li>
+      <li>1 tortilla de un huevo, con lechuga</li>
+      <li>2 tajadas de pan</li>
+      <li>piña (150 a 200grs)</li>
+    </ul>
+  </div>
+  </div>
+
+</div>

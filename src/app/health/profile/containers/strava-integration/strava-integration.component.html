@@ -1,0 +1,14 @@
+<div class="plans">
+  <div class="plans__title">
+    <h1>
+      <span id="title_plan" alt="You will be redirected to Strava to login and authorise this application">Inicie Sesión Strava</span>
+    </h1>
+    <button class="btn btn-primary" (click)="initCodeFlow()">Login</button>
+  </div>
+  <ng-template #loading>
+    <div class="message">
+      <img src="/assets/images/loading.svg">
+      Cargando Datos Strava...
+    </div>
+  </ng-template>
+</div>

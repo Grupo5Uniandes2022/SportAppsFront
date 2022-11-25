@@ -1,0 +1,44 @@
+<div class="card" *ngIf="data">
+  <div class="card-content">
+    <div class="media">
+      <div class="media-left">
+        <figure class="text-center is-48x48">
+          <img class="is-rounded" src={{data.athlete.profile_medium}} alt="Placeholder image">
+        </figure>
+      </div>
+      <div class="media-content text-center">
+        <p class="title is-4">{{data.athlete.firstname}} {{data.athlete.lastname}}</p>
+        <div class="container text-center">
+          <div class="row">
+            <div class="col">
+              <p>Actividad mas Larga</p>
+            </div>
+            <div class="col">
+              <p>{{data.stats.biggest_ride_distance / 1000}} km</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <p>Total de Actividades</p>
+            </div>
+            <div class="col">
+              <p>{{ data.stats.all_ride_totals.count}}</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <p>Total Tiempo Activo</p>
+            </div>
+            <div class="col">
+              <p>{{ ((data.stats.all_ride_totals.moving_time * 0.001) / 60) | number: '1.1-2'}} minutos</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div>
+      <!--app-activity-summary [data]="data.stats"></app-activity-summary-->
+    </div>
+  </div>
+</div>

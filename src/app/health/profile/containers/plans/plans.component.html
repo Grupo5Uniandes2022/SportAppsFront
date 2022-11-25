@@ -1,0 +1,86 @@
+<div class="plans">
+  <div class="plans__title">
+    <h1>
+      <img src="/assets/images/plan.svg">
+      <span id="title_plan">Plan de Subscripción</span>
+    </h1>
+    <a class="btn btn-outline-primary" [routerLink]="['../profile/update-plan']" role="button">Cambiar mi plan de subscripción</a>
+
+  </div>
+
+  <div class="message">
+    Tu plan de subscripción actual es :  <span>{{plan}}</span>
+  </div>
+
+  <ng-template #loading>
+    <div class="message">
+      <img src="/assets/images/loading.svg">
+      Obteniendo planes...
+    </div>
+  </ng-template>
+</div>
+<div class="plans">
+  <div class="plans__title">
+    <h1>
+      <img src="/assets/images/face.svg">
+      <span id="title_profile">Detalle de Perfil</span>
+    </h1>
+  </div>
+
+  <div class="message">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 text-center">
+           <a class="btn btn-outline-primary" [routerLink]="['../meals']" role="button">Perfil Alimenticio</a>
+        </div>
+        <div class="col-md-6 text-center">
+          <a class="btn btn-outline-primary" [routerLink]="['../profile/sport']" role="button">Perfil Deporitvo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #loading>
+    <div class="message">
+      <img src="/assets/images/loading.svg">
+      Obteniendo perfiles...
+    </div>
+  </ng-template>
+</div>
+
+<div class="plans" *ngIf="!roleStrava">
+  <div class="plans__title">
+    <h1>
+      <img src="/assets/images/plan.svg">
+      <span id="title_plan">Integracion Strava</span>
+    </h1>
+
+    <a class="btn btn-primary" [routerLink]="['../profile/strava-auth']" role="button">Integrar con Strava</a>
+
+
+  </div>
+  <ng-template #loading>
+    <div class="message">
+      <img src="/assets/images/loading.svg">
+      Cargando Ingreso Strava...
+    </div>
+  </ng-template>
+</div>
+<div class="plans" *ngIf="roleStrava">
+  <div class="plans__title">
+    <h1>
+      <img src="/assets/images/plan.svg">
+      <span id="title_plan">Detalle Perfil Strava</span>
+    </h1>
+
+    <a class="btn btn-primary" [routerLink]="['../profile/integrations']" role="button">Datos Strava</a>
+
+
+  </div>
+  <ng-template #loading>
+    <div class="message">
+      <img src="/assets/images/loading.svg">
+      Cargando Datos Strava...
+    </div>
+  </ng-template>
+</div>

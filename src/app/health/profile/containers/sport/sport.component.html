@@ -1,0 +1,67 @@
+<div class="plans">
+  <div class="plans__title">
+    <h1>
+      <img src="/assets/images/face.svg">
+      <span id="title_plan">Perfil Deportivo</span>
+    </h1>
+
+  </div>
+
+  <div class="message ">
+    <div class="container">
+      <div class="row">
+        <h4>Caracteristicas Fisiologicas</h4>
+        <hr>
+      </div>
+
+    <div class="sport-form">
+      <form [formGroup]="form">
+        <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 sport-form__edad">
+          <label>
+            <h3>Edad (Años)</h3>
+            <input
+              type="number"
+              formControlName="edad"
+              value="{{data.edad}}">
+          </label>
+          <label>
+            <h3>Peso (Kg)</h3>
+            <input
+              type="number"
+              formControlName="peso"
+              value="{{data.peso}}">
+
+          </label>
+          <label>
+            <h3>IMC (Kg/m2)</h3>
+            <input
+              type="number"
+              formControlName="imc"
+              value="{{data.imc}}">
+          </label>
+
+          <div>
+
+            <button
+              type="number"
+              class="button"
+              (click)="saveSportData()"
+             >
+              Guardar
+            </button>
+            <a
+              class="button button--cancel"
+              [routerLink]="['../']">
+              Cancelar
+            </a>
+          </div>
+        </div>
+        </div>
+      </form>
+    </div>
+    </div>
+  </div>
+
+</div>

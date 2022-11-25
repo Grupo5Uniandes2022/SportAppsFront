@@ -1,0 +1,90 @@
+<div class="meal-form">
+
+  <form [formGroup]="form">
+    <div class="meal-form__name">
+      <label>
+        <h3>Tipo de Servicio</h3>
+        <select  class="form-select" formControlName="type">
+          <option>Cita Medica</option>
+          <option>Otro</option>
+        </select>
+        <div class="error" *ngIf="required">
+          Tipo de servicio es un campo requerido
+        </div>
+      </label>
+      <label>
+        <h3>Nombre de Servicio</h3>
+        <input
+          type="string"
+          formControlName="name">
+        <div class="error" *ngIf="required">
+          Nombre de Servicio es requerido
+        </div>
+      </label>
+      <label>
+        <h3>Direccion de Servicio</h3>
+        <input
+          type="string"
+          formControlName="address">
+        <div class="error" *ngIf="required">
+          Direccion de Servicio es requerida
+        </div>
+      </label>
+    </div>
+
+
+
+
+    <div class="meal-form__submit">
+      <div>
+        <button
+          type="button"
+          class="button"
+          *ngIf="!exists"
+          (click)="createService()">
+          Crear Servicio
+        </button>
+
+        <button
+          type="button"
+          class="button"
+          *ngIf="exists"
+          (click)="updateService()">
+          Guardar
+        </button>
+
+        <a
+          class="button button--cancel"
+          [routerLink]="['../']">
+          Cancelar
+        </a>
+      </div>
+
+      <div class="meal-form__delete" *ngIf="exists">
+        <div *ngIf="toggled">
+          <p>Delete item?</p>
+
+          <button
+            class="confirm"
+            type="button"
+            (click)="removeService()">
+            Yes
+          </button>
+
+          <button
+            class="cancel"
+            type="button"
+            (click)="toggle()">
+            No
+          </button>
+        </div>
+
+        <button class="button button--delete" type="button" (click)="toggle()">
+          Delete
+        </button>
+      </div>
+    </div>
+
+  </form>
+
+</div>

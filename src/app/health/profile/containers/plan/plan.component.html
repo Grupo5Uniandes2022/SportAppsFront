@@ -1,0 +1,117 @@
+<div class="plan">
+
+  <div class="plan__title">
+    <h1>
+      <img src="assets/images/plan.svg">
+
+      <span >Cambiar plan de  subscripción</span>
+
+    </h1>
+
+  </div>
+  <div class="container" >
+   <br>
+  <div class="card" >
+    <div class="card-body">
+      <h5 class="card-title">Gratuito</h5>
+      <p class="card-text">&#9745; El plan básico, ofrece planes de entrenamiento basados en sus caracteristicas fisiologicas, su lugar de residencia y su historial deportivo.</p>
+      <p class="card-text">&#9745; El plan básico, le sugiere rutas o eventos en los que puede partificar en una fecha y lugar especifico.</p>
+      <p class="card-text">
+        &#9745; El plan básico, adicionalmente puede sugerir planes de entrenamiento dentro o fuera de casa, de igual forma se le sugeriran servicios de acompañamiento
+        para su deporte, por ejemplo en el caso de ciclismo, moto-taller y servicios de primeros auxilios durante la ruta. Estos servicios son prestados por
+        terceros afiliados a SportApp.
+      </p>
+      <p class="card-text">&#9745; El plan básico, tambien permite la sugerencia de un plan de alimentación que
+        complemente su plan nutricional y de recuperación después del ejercicio. Se analizan
+        los datos del usuario una vez terminada la sesión y se le sugieren posibles rutinas
+        alimenticias, así como empresas que le pueden entregar estos alimentos a domicilio, si
+        asi lo desea el usuario. Estas empresas están afiliadas a SporApp y se enfocan en
+        alimentación para deportistas.</p>
+      <p class="card-text">
+        &#9745; El plan básico permite integrarse con aplicaciones de registros deportivos como strava o
+        traningpeaks, para el envío o lectura de información.
+      <p class="card-text">
+      <p>
+      &#9745; El plan básico le permite a un usuario tener un tablero de control donde puede ver todos
+        los resultados de los eventos realizados, así como su perfil deportivo.
+      </p>
+      <div class="col-md-12 text-center">
+        <button class="btn btn-success" (click)="updatePlan('GRATIS')">Seleccionar</button>
+      </div>
+    </div>
+  </div>
+    <hr>
+  <div class="card" >
+    <div class="card-body">
+      <h5 class="card-title">Intermedio</h5>
+      <p class="card-text">
+        &#9745; El plan intermedio, pago por mes, permite todo lo del plan gratuito mas seguimiento en
+        tiempo real.
+      </p>
+      <p class="card-text">
+        &#9745; El plan intermedio, permite en el escenario donde un usuario está realizando una práctica deportiva, es seguido en tiempo
+        cercano al real. Se requiere que pueda conectar todos sus dispositivos de medición a
+        la aplicación móvil.
+      </p>
+      <p class="card-text">
+        &#9745;  El usuario es monitoreado y en caso de que se detecte una
+        situación médica de riesgo, el usuario es alertado para que detenga su práctica.
+      </p>
+      <div class="col-md-12 text-center">
+        <button class="btn btn-success" (click)="updatePlan('INTERMEDIO')">Seleccionar</button>
+      </div>
+    </div>
+  </div>
+    <hr>
+  <div class="card" >
+    <div class="card-body">
+      <h5 class="card-title">Premium</h5>
+      <p class="card-text">
+        &#9745; El plan premium, con pago anual, permite todo lo del plan intermedio mas un servicio de
+        entrenador/deportólogo personalizado y cuidado post-ejercicio.
+      </p>
+      <p class="card-text">
+        &#9745; El entrenador personalizado le permite al usuario programar sesiones virtuales con un
+        entrenado que conoce la historia clínica y deportiva del usuario. Estas sesiones sirven
+        para analizar en mayor detalle los objetivos y evolución del usuario, así como para
+        solucionar dudas sobre las rutinas, discutir el efecto de algunos ejercicios en cada
+        usuario particular y recibir retroalimentación profesional sobre los planes de
+        entrenamiento.
+      </p>
+      <p class="card-text">
+        &#9745; Si el usuario presenta molestias o tiene dudas sobre el efecto de algunas rutinas, puede
+        consultar igualmente con un deportólogo, de forma virtual o presencial.
+      </p>
+      <p class="card-text">
+        &#9745; El servicio de recuperación, analiza los datos del usuario una vez finalizado el ejercicio,
+        y de acuerdo al plan diseñado por el entrenador, le indica al usuario las mejores rutinas
+        de descanso y alimentación para tener una mejor recuperación.
+      </p>
+      <p class="card-text">
+        &#9745; Este servicio incluye rutinas como masajes y dispositivos especializados en
+        recuperación de lesiones deportivas y pueden ser prestados en casa o en centros
+        especializados. Tienen un valor adicional y pueden ser agendados a través de la
+        aplicación con centros avalados por SportApp.
+      </p>
+      <div class="col-md-12 text-center">
+        <button class="btn btn-success" (click)="updatePlan('PREMIUM')">Seleccionar</button>
+      </div>
+    </div>
+  </div>
+    <hr>
+    <div class="col-md-12 text-center">
+     <a class="btn btn-outline-primary" [routerLink]="['../']" role="button">Volver</a>
+    </div>
+    <br>
+  </div>
+
+
+
+  <ng-template #loading>
+    <div class="message">
+      <img src="assets/images/loading.svg">
+      Obteniendo planes...
+    </div>
+  </ng-template>
+
+</div>

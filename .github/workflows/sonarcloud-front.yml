@@ -40,6 +40,8 @@ jobs:
           cd coverage/workout-fitness/
           pwd
           ls -la
+      - name: Cat info
+        run: cat ./coverage/workout-fitness/lcov.info
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
@@ -49,5 +51,9 @@ jobs:
           args:
             -Dsonar.projectKey=Grupo5Uniandes2022_SportAppsFront
             -Dsonar.organization=grupo5uniandes2022
+            -Dsonar.sources=src
+            -Dsonar.tests=src
+            -Dsonar.exclusions=**/node_modules/**,src/assets/**
+            -Dsonar.test.inclusions=**/*.spec.ts
             -Dsonar.javascript.lcov.reportPaths=./coverage/workout-fitness/lcov.info
             -Dsonar.typescript.tsconfigPaths=tsconfig.json

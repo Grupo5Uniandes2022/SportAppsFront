@@ -51,5 +51,8 @@ jobs:
           args:
             -Dsonar.projectKey=Grupo5Uniandes2022_SportAppsFront
             -Dsonar.organization=grupo5uniandes2022
+            -Dsonar.language=js
+            -Dsonar.sources=.
+            -Dsonar.sourceEncoding=UTF-8
             -Dsonar.javascript.lcov.reportPaths=./coverage/workout-fitness/lcov.info
             -Dsonar.typescript.tsconfigPaths=tsconfig.json

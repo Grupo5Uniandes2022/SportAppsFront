@@ -37,11 +37,11 @@ jobs:
         run: npm run coverage -- --watch=false --browsers=ChromeHeadless
       - name: Space
         run: |-
-          cd coverage/workout-fitness/
+          cd coverage/
           pwd
           ls -la
       - name: Cat info
-        run: cat ./coverage/workout-fitness/lcov.info
+        run: cat ./coverage/lcov.info
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
@@ -57,5 +57,5 @@ jobs:
             -Dsonar.coverage.exclusions=**/node_modules/**,src/assets/**
             -Dsonar.test.inclusions=**/*.spec.ts
             -Dsonar.sourceEncoding=UTF-8
-            -Dsonar.javascript.lcov.reportPaths=./coverage/workout-fitness/lcov.info
+            -Dsonar.javascript.lcov.reportPaths=./coverage/lcov.info
             -Dsonar.typescript.tsconfigPaths=tsconfig.json

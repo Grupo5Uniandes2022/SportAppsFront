@@ -51,6 +51,7 @@ jobs:
           args:
             -Dsonar.projectKey=Grupo5Uniandes2022_SportAppsFront
             -Dsonar.organization=grupo5uniandes2022
+            -Dsonar.projectBaseDir=.
             -Dsonar.language=js
             -Dsonar.sources=src
             -Dsonar.tests=src

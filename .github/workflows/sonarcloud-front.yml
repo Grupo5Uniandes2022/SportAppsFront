@@ -33,12 +33,13 @@ jobs:
         run: npm run build -- --prod
       - name: Run Unit tests
         run: npm run test -- --watch=false --browsers=ChromeHeadless
-      - name: Space
-        run: |-
-          cd coverage/
-          pwd
-          ls -la
-      - name: Cat info
+      - name: Run Coverage
+        run: npm run coverage -- --watch=false --browsers=ChromeHeadless
+      - name: Cat before info
+        run: cat ./coverage/lcov.info
+      - name: Seed lcov
+        run: sed -i 's+/home/runner/work/SportAppsFront/SportAppsFront/++g' coverage/lcov.info
+      - name: Cat after info
         run: cat ./coverage/lcov.info
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master

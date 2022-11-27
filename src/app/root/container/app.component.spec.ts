@@ -1,5 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, inject } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { AuthService } from '@app/auth/shared/services/auth.service';
+import { Router } from '@angular/router';
+import { Store } from '@app/store';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -7,7 +10,8 @@ describe('AppComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AppComponent ]
+      declarations: [ AppComponent ],
+      providers: [AuthService]
     })
     .compileComponents();
   }));
@@ -18,7 +22,7 @@ describe('AppComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  it('should ...', inject([Router, Store, AuthService], (service: AuthService) => {
+    expect(service).toBeTruthy();
+  }));
 });

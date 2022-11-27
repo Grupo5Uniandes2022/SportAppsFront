@@ -16,12 +16,12 @@
     "**/*.d.ts"
   ],
   "exclude": [
-    "main.ts",
-    "karma.conf.js",
-    "environments/environment.prod.ts",
-    "app/app-routing.module.ts",
-    "app/interceptors/index.ts",
-    "app/auth/auth.module.ts",
-    "app/auth/auth-routing.module.ts"
+    "./main.ts",
+    "./karma.conf.js",
+    "./environments/environment.prod.ts",
+    "./app/app-routing.module.ts",
+    "./app/interceptors/index.ts",
+    "./app/auth/auth.module.ts",
+    "./app/auth/auth-routing.module.ts"
  ]
 }
